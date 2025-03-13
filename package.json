@@ -26,6 +26,9 @@
   "dependencies": {
     "express": "^4.21.2",
     "mongoose": "^8.12.1",
-    "redis": "^4.7.0"
+    "redis": "^4.7.0",
+    "reflect-metadata": "^0.2.2",
+    "tsyringe": "^4.8.0",
+    "zod": "^3.24.2"
   }
 }
