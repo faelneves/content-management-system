@@ -1,6 +1,11 @@
 import express from 'express';
+import router from './routes/routerV1';
+
+
 const app = express();
-const port = 3000;
+const port = process.env.port || 3000;
+
+app.use('/api/v1', router);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
