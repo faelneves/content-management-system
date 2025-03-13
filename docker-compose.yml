@@ -33,9 +33,21 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=example
     networks:
       - cms-network
+  
+  redis:
+    container_name: cms-redis
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: ["redis-server", "--requirepass", "redispass"]
+    networks:
+      - cms-network
 
 volumes:
   mongo-data:
+  redis-data:
 
 networks:
   cms-network:
