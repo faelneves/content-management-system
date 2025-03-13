@@ -7,14 +7,14 @@ export enum ArticleStatus {
   ARCHIVED = "Archived",
 }
 
-interface IVersion extends Document {
+export interface IVersion extends Document {
   content: string;
   version: number;
   updatedBy: Types.ObjectId;
   timestamp: Date;
 }
 
-interface IArticle extends Document {
+export interface IArticle extends Document {
   title: string;
   content: string;
   status: ArticleStatus;
