@@ -19,8 +19,6 @@ interface IArticle extends Document {
   content: string;
   status: ArticleStatus;
   createdBy: Types.ObjectId;
-  collaborators: Types.ObjectId[];
-  tags: string[];
   categories: string[];
   versions: IVersion[];
   publishedAt?: Date;
@@ -43,8 +41,6 @@ const articleSchema = new Schema<IArticle>(
       default: ArticleStatus.DRAFT,
     },
     createdBy: { type: Schema.Types.ObjectId, ref: "User", required: true },
-    collaborators: [{ type: Schema.Types.ObjectId, ref: "User" }],
-    tags: [{ type: String }],
     categories: [{ type: String }],
     versions: [versionSchema],
     publishedAt: { type: Date },
