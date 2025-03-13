@@ -10,6 +10,8 @@ const port = env.PORT
 
 app.use('/api/v1', router);
 
+app.use(express.json());
+
 (async () => {
   await connectDB();
   await connectRedis();
